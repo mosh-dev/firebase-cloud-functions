@@ -8,7 +8,6 @@ admin.initializeApp();
 export const addTofireStore = database
     .ref('/products/{pushId}')
     .onUpdate((snapshot: Change<DataSnapshot>, context: EventContext) => {
-        const original = snapshot.before.val();
         const updated = snapshot.after.val();
 
         console.log('Param is ', context.params.pushId);
